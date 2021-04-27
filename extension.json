@@ -1,0 +1,44 @@
+{
+    "identifier": "co.stuntrocket.readme",
+    "name": "README plz",
+    "organization": "StuntRocket",
+    "description": "View README the first time you open a project.",
+    "version": "1.0.0",
+    "categories": ["commands"],
+    
+    "main": "main.js",
+    
+    "activationEvents": [
+        "*"
+    ],
+    
+    "entitlements": {
+        "filesystem": "readwrite"
+    },
+    
+    "commands": {
+        "extensions": []
+    },
+    
+    "configWorkspace": [
+    {
+      "key": "readme.conf.main.section",
+      "title": "readme.conf.main.section.title",
+      "description": "readme.conf.main.section.description",
+      "type": "section",
+      "children": [
+        {
+          "key": "readme.conf.seen",
+          "title": "readme.conf.seen.title",
+          "type": "enum",
+          "values": [
+            [true, "readme.conf.is-seen"],
+            [false, "readme.conf.is-unseen"]
+          ],
+          "default": false
+        }
+      ]
+    }
+  ],
+    
+}

@@ -1,0 +1,11 @@
+{
+  "README extension for Nova code editor.": "README extension for Nova code editor.",
+  "readme.msg.activation-error": "There was an error activating the README extension. Please check the extension console for errors.",
+  "readme.conf.is-unseen": "Unseen",
+  "readme.conf.is-seen": "Seen",
+  "readme.conf.seen.title": "README",
+  "readme.conf.seen.description": "Have you seen the project README?",
+  "readme.cmd.workspace-config.title": "README Workspace Preferences",
+  "readme.conf.main.section.title": "Main Configuration",
+  "readme.conf.main.section.description": "Main configuration settings for README extension."
+}
