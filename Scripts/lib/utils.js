@@ -25,7 +25,7 @@ exports.getLocalConfig = function (key, type) {
  * @param {string} message - NotificationRequest.message.
  */
 exports.notify = function (id, message) {
-  const request = new NotificationRequest(id + exports.getId())
+  const request = new NotificationRequest(id)
   request.title = nova.extension.name
   request.body = message
 

@@ -162,7 +162,7 @@ function removeReferenceFile() {
       CMDS.canAccessPath(referencePath)
       .then(res => {
           let removed = nova.fs.remove(referencePath)
-          let confUpdated = nova.workspace.config.set(CONFIGKEYS.seen , false)
+          let confUpdated = nova.workspace.config.set(`${CONFIGKEYS.seen}` , false)
           resolve(fullPath)
       })
     } catch (_err) {
@@ -186,7 +186,7 @@ function initReferenceFile() {
              // After writing the reference (to denote README has been seen)
              // emit an open README request.
              let prefix = EXT.prefixConfig()
-             let confUpdated = nova.workspace.config.set(CONFIGKEYS.seen , true)
+             let confUpdated = nova.workspace.config.set(`${CONFIGKEYS.seen}`, true)
              myEventHandler.emit("open-readme", true)
          })
          .catch(_err => {
@@ -217,7 +217,7 @@ exports.activate = async function () {
     ])
     .then(() => {
       state.activated = true
-      let confUpdated = nova.workspace.config.set(CONFIGKEYS.seen , true)
+      let confUpdated = nova.workspace.config.set(`${CONFIGKEYS.seen}` , true)
       initReferenceFile()
     })
     .catch((_e) => {

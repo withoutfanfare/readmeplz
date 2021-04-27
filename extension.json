@@ -7,17 +7,13 @@
     "bugs": "https://github.com/withoutfanfare/readmeplz/issues",
     "version": "1.0.0",
     "categories": ["commands"],
-    
     "main": "main.js",
-    
     "activationEvents": [
         "*"
     ],
-    
     "entitlements": {
         "filesystem": "readwrite"
     },
-    
     "commands": {
       "extensions": [
         {
@@ -26,7 +22,6 @@
         }
       ]
     },
-    
     "configWorkspace": [
     {
       "key": "readme.conf.main.section",
@@ -42,10 +37,9 @@
             [true, "readme.conf.is-seen"],
             [false, "readme.conf.is-unseen"]
           ],
-          "default": false
+          "default": "false"
         }
       ]
     }
-  ],
-    
+  ] 
 }
