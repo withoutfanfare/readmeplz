@@ -197,6 +197,13 @@ function initReferenceFile() {
 }
 
 /**
+ * Reload the data from file and refresh interface.
+ */
+nova.commands.register(`${EXT.prefixCommand()}.reset`, () => {
+  removeReferenceFile()
+})
+
+/**
  * Initialise
  * @returns void
  */

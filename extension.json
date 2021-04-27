@@ -19,7 +19,12 @@
     },
     
     "commands": {
-        "extensions": []
+      "extensions": [
+        {
+          "title": "README: Reset",
+          "command": "readme.cmd.reset",
+        }
+      ]
     },
     
     "configWorkspace": [
