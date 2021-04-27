@@ -12,7 +12,7 @@ const {
 let myEventHandler = null
 let readmeExists = false
 
-const README = 'README'
+const README = "README"
 const README_FILE = `${README}.md`
 const README_PATH = nova.path.join(nova.workspace.path, README_FILE)
 
@@ -23,7 +23,7 @@ const README_PATH = nova.path.join(nova.workspace.path, README_FILE)
 let state = {
   activated: false
 }
-    
+
 /**
  * Configuration keys.
  * @property {object}
@@ -178,7 +178,7 @@ function initReferenceFile() {
   .then(path => {
      // Create a hashed reference using the file path.
      let referencePath = getHashedReference(path)
-     // If it doesn't exist, create reference file.
+     // If it does not exist, create reference file.
      CMDS.canAccessPath(referencePath)
      .catch(_err => {
          writeReference(referencePath)
