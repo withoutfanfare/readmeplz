@@ -1,4 +1,4 @@
-**README** will display a project's README.md file the first time a folder is opened.
+**README** Nova Extension will display a project's README.md file the first time a folder is opened.
 
 ## Usage
 
