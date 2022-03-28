@@ -12,9 +12,17 @@ const {
 let myEventHandler = null
 let readmeExists = false
 
+const NOVA_WORKSPACE_PATH = nova?.workspace?.path
+
 const README = "README"
 const README_FILE = `${README}.md`
-const README_PATH = nova.path.join(nova.workspace.path, README_FILE)
+
+const README_PATH = nova && nova.path && NOVA_WORKSPACE_PATH && README_FILE 
+  ? nova.path.join(NOVA_WORKSPACE_PATH, README_FILE) 
+  : false;
+
+console.log(NOVA_WORKSPACE_PATH)
+console.log(README_FILE)
 
 /**
  * Extension state.
@@ -53,9 +61,14 @@ function initialiseEmitHandler() {
  * If we have a readme...
  */
 function hasReadme() {
+  if(!NOVA_WORKSPACE_PATH) {
+    console.log('Not a workspace - nothing to do.')
+    return false;
+  }
+  
   return new Promise((resolve, reject) => {
     try {
-      let fullPath = nova.path.join(nova.workspace.path, "README.md")
+      let fullPath = nova.path.join(NOVA_WORKSPACE_PATH, README_FILE)
       CMDS.canAccessPath(fullPath)
       .then(res => {
           resolve(fullPath)
@@ -72,7 +85,12 @@ function hasReadme() {
 }
 
 
-function writeReference(filePath) {    
+function writeReference(filePath) {  
+    if(!filePath) {
+      console.log('No filepath given - nothing to do.')
+      return false;
+    }
+      
     return new Promise((resolve, reject) => {
         try {
             const refFile = nova.fs.open(filePath, "w+")
@@ -154,9 +172,14 @@ function getHashedReference(path) {
 
 
 function removeReferenceFile() {
+  if(!NOVA_WORKSPACE_PATH) {
+    console.log('removeReferenceFile - Not a workspace - nothing to do.')
+    return false;
+  }
+  
   return new Promise((resolve, reject) => {
     try {
-      let fullPath = nova.path.join(nova.workspace.path, "README.md")
+      let fullPath = nova.path.join(NOVA_WORKSPACE_PATH, README_FILE)
       let referencePath = getHashedReference(fullPath)
       
       CMDS.canAccessPath(referencePath)

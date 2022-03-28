@@ -40,7 +40,7 @@ environment is a workspace or Nova window without a
 workspace.
 */
 exports.isWorkspace = function isWorkspace() {
-  if (nova.workspace.path == undefined || nova.workspace.path == null) {
+  if (!nova?.workspace?.path || nova.workspace.path == undefined || nova.workspace.path == null) {
     return false
   } else {
     return true
@@ -69,7 +69,7 @@ exports.ensureFolder = function ensureFolder() {
   return new Promise((resolve, reject) => {
     try {
       if (!nova.workspace || !nova.workspace.path) {
-        throw new Error("missing nova.workspace.path.");
+        throw new Error("missing nova.workspace.path - nothing to do");
       }
       
       let openPath = nova.workspace.path
