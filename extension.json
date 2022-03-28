@@ -5,7 +5,7 @@
     "description": "View README the first time you open a project.",
     "repository": "https://github.com/withoutfanfare/readmeplz",
     "bugs": "https://github.com/withoutfanfare/readmeplz/issues",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "categories": ["commands"],
     "main": "main.js",
     "activationEvents": [

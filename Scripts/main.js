@@ -21,8 +21,6 @@ const README_PATH = nova && nova.path && NOVA_WORKSPACE_PATH && README_FILE
   ? nova.path.join(NOVA_WORKSPACE_PATH, README_FILE) 
   : false;
 
-console.log(NOVA_WORKSPACE_PATH)
-console.log(README_FILE)
 
 /**
  * Extension state.
